@@ -3,8 +3,6 @@
 #include <string>
 #include "ArithmeticExpressionProcessor.hpp"
 #include "LogicalExpressionProcessor.hpp"
-//#include "" для логического типа
-
 
 Expression::Expression(std::string& rawExpression, std::string& type)
 {
@@ -48,7 +46,7 @@ void Expression::normalaize()
             processor = parseExpr(this->rawExpression);
         }
         catch (const std::exception& e) {
-            std::cerr << "Ошибка при парсинге логического выражения: " << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
             return;
         }
 
