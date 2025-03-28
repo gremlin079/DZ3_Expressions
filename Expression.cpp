@@ -39,11 +39,11 @@ void Expression::normalaize()
 	else if (this->type == "Логическое")
 	{
         // Сброс позиции для парсинга
-        int pos = 0;
+        size_t pos = 0;
         // Парсим логическое выражение из строки this->expression
         LogicalExpressionProcessor* processor = nullptr;
         try {
-            processor = parseExpr(this->rawExpression);
+            processor = parseExpr(this->rawExpression, pos);
         }
         catch (const std::exception& e) {
             std::cerr << e.what() << std::endl;

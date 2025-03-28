@@ -38,16 +38,16 @@ public:
 };
 
 // Пропуск пробелов в строке
-void skipSpaces(const std::string& s);
+void skipSpaces(const std::string& s, size_t& pos);
 
 // Функция для парсинга выражений
-LogicalExpressionProcessor* parseExpr(const std::string& s);
+LogicalExpressionProcessor* parseExpr(const std::string& s, size_t& pos);
 
 // Функция для парсинга фактора (переменная или подвыражение в скобках)
-LogicalExpressionProcessor* parseFactor(const std::string& s);
+LogicalExpressionProcessor* parseFactor(const std::string& s, size_t& pos);
 
 // Функция для парсигна терма (фактор с операциями И)
-LogicalExpressionProcessor* parseTerm(const std::string& s);
+LogicalExpressionProcessor* parseTerm(const std::string& s, size_t& pos);
 
 // Сбор все переменных
 void collectVariables(const std::string& s, std::set<char>& vars);
